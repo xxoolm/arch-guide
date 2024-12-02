@@ -1,30 +1,47 @@
 {
-  "name": "arch-guide",
-  "version": "1.0.0",
+  "author": "icekylin <dwsdbcugm@mozmail.com>",
   "description": "This guide contains everything you may need from archlinux installation, graphics driver, daily software configuration, multimedia production, programming, etc.",
-  "main": "index.js",
-  "repository": "https://github.com/NakanoMikuOrg/arch-guide",
-  "author": "icekylin <wminid@yeah.net>",
-  "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^2.0.0-beta.15",
-    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.16",
-    "@vuepress/plugin-search": "^2.0.0-beta.16",
-    "husky": "^8.0.0",
-    "markdown-it": "^13.0.1",
-    "markdown-it-mathjax3": "^4.3.1",
-    "prettier": "2.7.1",
-    "pretty-quick": "^3.1.3",
-    "vuepress": "^2.0.0-beta.16"
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "vitepress": "^1.0.2",
+    "vue": "^3.4.21"
   },
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "prepare": "husky install"
+  "keywords": [
+    "archlinux 指南",
+    "archlinux 教程",
+    "archlinux 安装",
+    "archlinux tutorial",
+    "archlinux guide",
+    "archlinux install",
+    "archlinux",
+    "Arch Linux",
+    "Linux",
+    "tutorial",
+    "guide",
+    "ebook"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
+  "main": "index.js",
+  "name": "arch-guide",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
     }
-  }
+  },
+  "repository": "https://github.com/nakanomikuorg/arch-guide",
+  "scripts": {
+    "docs:build": "vitepress build docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:preview": "vitepress preview docs",
+    "prepare": "husky install",
+    "update": "pnpm update -r --latest"
+  },
+  "version": "1.0.0",
+  "type": "module"
 }
